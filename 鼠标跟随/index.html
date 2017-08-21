@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{
+			width: 400px;
+			height: 400px;
+			background-image: url(x.jpg);
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div id="div" style="top: 110px;left: 110px;"></div>
+	<script type="text/javascript">
+		var div = document.getElementById("div");
+		div.onmouseover = function(event)
+		{
+			event = event||window.event;
+			var pointX0 = event.clientX;
+			var pointY0 = event.clientY;
+
+			div.onmousemove = function(event){
+			event = event||window.event;
+				var pointX1 = event.clientX;
+				var pointY1 = event.clientY;
+				var leftD = pointX1-pointX0;
+				var topD = pointY1-pointY0;
+				console.log(pointX0);
+				div.style.left = leftD+'px';
+				div.style.top = topD+'px';
+			}
+		}
+		//console.log(pointX0);
+		// div.onmousemove = function(event){
+		// 	event = event||window.event;
+		// 		var pointX1 = event.clientX;
+		// 		var pointY1 = event.clientY;
+		// 		var leftD = pointX1-pointX0;
+		// 		var topD = pointY1-pointY0;
+		// 		div.style.left = leftD+'px';
+		// 		div.style.top = topD+'px';
+		// 	}
+	</script>
+</body>
+</html>
